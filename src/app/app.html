@@ -1,0 +1,35 @@
+<mat-sidenav-container class="w-full h-full">
+    <mat-sidenav mode="side" class="!bg-gray-100" opened>
+        <mat-list>
+            <h1 mat-subheader>
+                <b class="text-xl">MENU</b>
+            </h1>
+
+            <mat-list-item>
+                <div class="flex flex-row items-center text-xs">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="assignment"></mat-icon>
+                    <span class="ml-4">
+                        <b>
+                            <a routerLink="formulario">Formulário</a>
+                        </b>
+                    </span>
+                </div>
+            </mat-list-item>
+            
+            <mat-list-item>
+                <div class="flex flex-row items-center text-xs">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="table_chart"></mat-icon>
+                    <span class="ml-4">
+                        <b>
+                            <a routerLink="tabela">Tabela</a>
+                        </b>
+                    </span>
+                </div>
+            </mat-list-item>
+            
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,75 @@
+<div class="w-full h-full flex flex-col justify-start items-stretch p-8">
+
+    <mat-card class="w-full p-6 bg-indigo-50">
+        <mat-card-header>
+            <mat-card-title class="!text-base !font-bold">
+                Acessos
+            </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="fs">
+            <form class="flex flex-col  " (ngSubmit)="onSalvarAcessos()" [formGroup]="formCredenciais">
+                <div class="flex flex-col items-stretch gap-4 w-full mb-4">
+                    <mat-form-field class="self-stretch grow">
+                        <mat-label>Email</mat-label>
+                        <input matInput matNativeControl placeholder="Digite seu email" type="text" required="true"
+                            formControlName="email">
+                        <mat-error>Inserir e-mail válido</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="grow">
+                        <mat-label>Senha</mat-label>
+                        <input matInput matNativeControl placeholder="Digite seu nome" required="true" type="password"
+                            formControlName="password">
+                        <mat-error>Inserir senha válida</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <button mat-raised-button color="primary" matButton="filled" type="submit" class="w-48">
+                    SALVAR
+                </button>
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+
+    <mat-accordion class="mt-4">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Informações pessoais
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <form class="flex flex-col mb-4" [formGroup]="formInfos" (ngSubmit)="onSalvarInfos()">
+                <div class="flex flex-row items-stretch gap-4 w-full mb-4">
+                    <mat-form-field class="grow">
+                        <mat-label>Nome</mat-label>
+                        <input matInput matNativeControl placeholder="Digite seu nome" type="text" formControlName="nome">
+                    </mat-form-field>
+                    <mat-form-field class="grow">
+                        <mat-label>Telefone</mat-label>
+                        <input matInput matNativeControl placeholder="Digite seu telefone" type="tel" formControlName="telefone">
+                    </mat-form-field>
+                    <mat-form-field class="grow">
+                        <mat-label>Idade</mat-label>
+                        <input matInput matNativeControl placeholder="Digite sua idade" type="number" formControlName="idade">
+                    </mat-form-field>
+                </div>
+
+                <mat-form-field class="w-full">
+                    <mat-label>Observações</mat-label>
+                    <textarea matInput matNativeControl placeholder="Digite suas observações" rows="5" formControlName="observacao"
+                        class="w-full"></textarea>
+                    <mat-hint>Ex: Meu nome é ..., nasci na cidade de ... </mat-hint>
+                </mat-form-field>
+            </form>
+
+            <button mat-raised-button color="primary" matButton="filled" type="button" class="w-48"
+                (click)="onSalvarInfos()">
+                SALVAR
+            </button>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>
